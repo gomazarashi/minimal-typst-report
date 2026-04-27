@@ -3,10 +3,14 @@
 
 #import "template.typ": report
 
+// コードブロックを見やすく整形・ハイライトする
 #import "@preview/codelst:2.0.1": sourcecode
+// 数式の参照・番号付け機能を拡張する
 #import "@preview/equate:0.3.2": equate
 #show: equate.with(number-mode: "label")
+// 物理系の記法（微分記号など）を簡潔に書くためのマクロ群
 #import "@preview/physica:0.9.8": *
+// CJK 文字間で不自然な空きが入るのを抑制する
 #import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
 #show: remove-cjk-break-space
 
