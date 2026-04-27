@@ -11,9 +11,28 @@
 #show: remove-cjk-break-space
 
 #show: report.with(
+  // タイトルページ情報（必要に応じて上書き）
   title: "レポートタイトル",
   author: "山田太郎",
   student-id: "0000000",
+  // date: datetime.today(),
+
+  // ページ設定
+  // paper: "a4",
+  // margin: (x: 20mm, y: 25mm),
+
+  // フォント設定
+  // seriffont: "New Computer Modern",
+  // seriffont-cjk: "Harano Aji Mincho",
+  // sansfont: "Source Sans Pro",
+  // sansfont-cjk: "Harano Aji Gothic",
+  // monofont: "DejaVu Sans Mono",
+
+  // 本文スタイル
+  // fontsize: 10pt,
+  // linespacing: 1.7,
+  // non-cjk: regex("[\u0000-\u2023]"),
+  // heading-numbering: "1.1.",
 )
 
 
