@@ -30,6 +30,36 @@
   v(20pt)
 }
 
+// 三線表スタイルの表を生成する関数
+#let report-table(
+  columns: 2,
+  align: (left, center),
+  header: ([項目], [値]),
+  rows: (),
+  caption: [表],
+  label-name: none,
+) = {
+  v(1em)
+  let fig = figure(
+    table(
+      columns: columns,
+      align: align,
+      stroke: none,
+      table.hline(y: 0, stroke: 1.2pt + black),
+      table.header(..header),
+      table.hline(y: 1, stroke: 0.5pt + black),
+      ..rows.flatten(),
+      table.hline(y: auto, stroke: 1.2pt + black),
+    ),
+    caption: caption,
+  )
+  if label-name != none {
+    [#fig #label(label-name) #v(1em)]
+  } else {
+    [#fig #v(1em)]
+  }
+}
+
 // レポート本体のフォーマットを適用する関数
 #let report(
   // タイトルページの情報
@@ -84,6 +114,9 @@
 
   // 見出しの番号付け形式を設定
   set heading(numbering: heading-numbering)
+
+  // 表（figure kind: table）だけキャプションを上に配置
+  show figure.where(kind: table): set figure.caption(position: top)
 
   // 見出し表示ルール：level 1 で数式カウンタをリセット
   show heading: it => {

@@ -1,7 +1,7 @@
 // example.typ
 // レポート本文の記述例
 
-#import "template.typ": report
+#import "template.typ": report, report-table
 
 // コードブロックを見やすく整形・ハイライトする
 #import "@preview/codelst:2.0.1": sourcecode
@@ -67,15 +67,14 @@ $ <eq:partial>
 
 == 表の例
 
-#figure(
-  table(
-    columns: 2,
-    [項目], [値],
-    [A], [1],
-    [B], [2],
+#report-table(
+  rows: (
+    ([A], [1]),
+    ([B], [2]),
   ),
   caption: [表の例],
-) <tbl:example>
+  label-name: "tbl:example",
+)
 
 @tbl:example に例を示す。
 
