@@ -10,6 +10,8 @@
 #show: equate.with(number-mode: "label")
 // 物理系の記法（微分記号など）を簡潔に書くためのマクロ群
 #import "@preview/physica:0.9.8": *
+// 日本語ダミーテキスト（Lorem Ipsum）を生成する
+#import "@preview/roremu:0.1.0": roremu
 // CJK 文字間で不自然な空きが入るのを抑制する
 #import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
 #show: remove-cjk-break-space
@@ -76,12 +78,17 @@ $ <eq:partial>
 ) <tbl:example>
 
 @tbl:example に例を示す。
-= 見出し
 
-== 本文
+= roremu の例
 
-== 数式の例
+== 日本語ダミーテキスト（標準）
 
-$
-  pdv(E, x_1) = 2 f_1 pdv(f_1, x_1) + 2 f_2 pdv(f_2, x_1)
-$ <eq:partial_>
+#roremu(8)
+
+== 日本語ダミーテキスト（開始位置をずらす）
+
+#roremu(8, offset: 8)
+
+== 日本語ダミーテキスト（先頭文を指定）
+
+#roremu(17, custom-text: "私はその人を常に先生と呼んでいた。")
