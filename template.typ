@@ -3,10 +3,10 @@
 
 // タイトルページを生成する関数
 #let report-title(
-  title: "タイトル", // レポートタイトル
-  author: "氏名", // 著者名
-  student-id: "0000000", // 学籍番号
-  date: datetime.today(), // 日付
+  title, // レポートタイトル
+  author, // 著者名
+  student-id, // 学籍番号
+  date, // 日付
 ) = {
   // PDF メタデータを設定
   set document(
