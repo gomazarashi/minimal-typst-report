@@ -128,10 +128,10 @@
 
 
   report-title(
-    title: title,
-    author: author,
-    student-id: student-id,
-    date: date,
+    title,
+    author,
+    student-id,
+    date,
   )
 
   body
